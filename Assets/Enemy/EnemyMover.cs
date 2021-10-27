@@ -20,7 +20,10 @@ public class EnemyMover : MonoBehaviour
             Vector3 endPosition = waypoint.transform.position;
             float travelPercent = 0f;
 
-            transform.LookAt(endPosition); //enemy faces direction they are heading
+            //Makes sure enemy faces direction they are heading
+            Vector3 dir = endPosition - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             while(travelPercent < 1f) //Creating smooth movement using LERP
             {
