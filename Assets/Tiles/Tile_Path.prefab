@@ -19,9 +19,13 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5283019
       objectReference: {fileID: 0}
+    - target: {fileID: 5417744813200964094, guid: 9955e1826be664447bb5ec1dc356805b, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7815322374307427872, guid: 9955e1826be664447bb5ec1dc356805b, type: 3}
       propertyPath: m_Name
-      value: Tile_PathStraight
+      value: Tile_Path
       objectReference: {fileID: 0}
     - target: {fileID: 7815322374307427873, guid: 9955e1826be664447bb5ec1dc356805b, type: 3}
       propertyPath: m_RootOrder
