@@ -37,8 +37,14 @@ public class Pathfinder : MonoBehaviour
         startNode = gridManager.Grid[startCoordinates];
         destinationNode = gridManager.Grid[destinationCoordinates];
 
+        GetNewPath();
+    }
+
+    public List<Node> GetNewPath()
+    {
+        gridManager.ResetNodes();
         BreadthFirstSearch();
-        BuildPath();
+        return BuildPath();
     }
 
     //Explores neighbors based on directions
@@ -71,7 +77,11 @@ public class Pathfinder : MonoBehaviour
     //Implementing BreadthFirstSearch pathfinding
     void BreadthFirstSearch()
     {
+        frontier.Clear();
+        reached.Clear();
+
         bool isRunning = true;
+
         frontier.Enqueue(startNode);
         reached.Add(startCoordinates, startNode);
 

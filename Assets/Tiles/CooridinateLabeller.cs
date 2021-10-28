@@ -77,9 +77,11 @@ public class CooridinateLabeller : MonoBehaviour
 
     private void DisplayCoordinates()
     {
-        //Displays Coordinates as 1,0 2,0 etc. Instead of however Snap Settings are configured
-        coordinates.x = Mathf.RoundToInt(transform.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(transform.position.y / UnityEditor.EditorSnapSettings.move.y);
+        if(gridManager == null) { return; }
+
+        //Displays Coordinates
+        coordinates.x = Mathf.RoundToInt(transform.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(transform.position.y / gridManager.UnityGridSize);
         label.text = coordinates.x + "," + coordinates.y;
     }
 
