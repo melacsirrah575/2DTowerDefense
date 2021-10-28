@@ -11,9 +11,10 @@ public class Node
     public bool isPath;
     public Node connectedTo;
 
-    public Node(Vector2Int m_coordinates, bool m_isWalkable)
+    public Node(Vector2Int coordinates, bool isWalkable)
     {
-        coordinates = m_coordinates;
-        isWalkable = m_isWalkable;
+        //This.variable is the public vector above. They are being equal to the ones in this Node Class
+        this.coordinates = coordinates;
+        this.isWalkable = isWalkable;
     }
 }

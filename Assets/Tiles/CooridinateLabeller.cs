@@ -11,7 +11,7 @@ public class CooridinateLabeller : MonoBehaviour
     [SerializeField] Color defaultColor = Color.white;
     [SerializeField] Color blockedColor = Color.gray;
     [SerializeField] Color exploredColor = Color.yellow;
-    [SerializeField] Color pathColor = new Color(1f, 0.5f, 0f);
+    [SerializeField] Color pathColor = new Color(1f, 0.5f, 0f); //Orange color
 
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
@@ -33,6 +33,8 @@ public class CooridinateLabeller : MonoBehaviour
         {
             DisplayCoordinates();
             UpdateObjectName();
+            //Line below allows you to see Coords in editor
+            label.enabled = true;
         }
 
         SetLabelColor();
