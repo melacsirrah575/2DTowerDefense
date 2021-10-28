@@ -131,17 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c9dd1e790a24642951bd37d7d2a09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   speed: 1.5
 --- !u!61 &1440952199412416250
 BoxCollider2D:
@@ -194,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
-  destinationCoordinates: {x: 0, y: 0}
+  destinationCoordinates: {x: 4, y: 4}
 --- !u!114 &6534761913457027998
 MonoBehaviour:
   m_ObjectHideFlags: 0
