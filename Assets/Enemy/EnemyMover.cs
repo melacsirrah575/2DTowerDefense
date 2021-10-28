@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,10 +29,16 @@ public class EnemyMover : MonoBehaviour
         path.Clear();
 
         //Takes Parent Object with Path Tag and makes a Path with children
+        //Makes path starting with first child and moves down from there
         GameObject parent = GameObject.FindGameObjectWithTag("Path");
         foreach(Transform child in parent.transform)
         {
-            path.Add(child.GetComponent<Waypoint>());
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+
+            if(waypoint != null)
+            {
+                path.Add(waypoint);
+            }
         }
     }
 
@@ -61,6 +68,11 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        FinishPath();
+    }
+
+    private void FinishPath()
+    {
         //Steal Gold and/or lose life happens here!
         gameObject.SetActive(false);
     }
