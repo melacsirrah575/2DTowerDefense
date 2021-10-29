@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5058569505796558231}
   - component: {fileID: 5058569505796558228}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 5058569505803470917}
   - component: {fileID: 1440952199412416250}
   - component: {fileID: 8231455603533728882}
-  m_Layer: 0
+  - component: {fileID: -8973874404211339099}
+  - component: {fileID: 6534761913457027998}
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,17 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c9dd1e790a24642951bd37d7d2a09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   speed: 1.5
 --- !u!61 &1440952199412416250
 BoxCollider2D:
@@ -151,7 +142,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -179,3 +170,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2243a3186ac1068418495f616f54b490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8973874404211339099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058569505803470919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07d6c08910638244aca9a3c4b29e725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCoordinates: {x: 0, y: 0}
+  destinationCoordinates: {x: 4, y: 4}
+--- !u!114 &6534761913457027998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058569505803470919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7388dcd15f75114781401124bbec548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyRamp: 1
+  maxHitPoints: 5
