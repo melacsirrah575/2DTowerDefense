@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c773f86ef3d1b64fa63c1fc5ece0ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 18, y: 10}
+  gridSize: {x: 17, y: 9}
   unityGridSize: 1
 --- !u!4 &246173243
 Transform:

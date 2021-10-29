@@ -24,8 +24,10 @@ public class EnemyHealth : MonoBehaviour
         enemy = GetComponent<Enemy>();
     }
 
-    //On Collision
-    //ProcessHit();
+    private void OnParticleCollision(GameObject other)
+    {
+        ProcessHit();
+    }
 
     void ProcessHit()
     {
