@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
-  destinationCoordinates: {x: 4, y: 4}
+  destinationCoordinates: {x: 15, y: 8}
 --- !u!114 &6534761913457027998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,5 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7388dcd15f75114781401124bbec548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyRamp: 1
-  maxHitPoints: 5
+  difficultyRamp: 2
+  maxHitPoints: 3

@@ -25,15 +25,15 @@ public class Advanced_TargetLocator : MonoBehaviour
 
     private void FindClosestTarget()
     {
-        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        Advanced_Enemy[] enemies = FindObjectsOfType<Advanced_Enemy>();
         Transform closestTarget = null;
         //Furthest distance an enemy will be detected. Initialized to infinity to always give a result
         float maxDistance = Mathf.Infinity;
 
-        foreach (Enemy enemy in enemies)
+        foreach (Advanced_Enemy enemy in enemies)
         {
             //Finds distance between tower and current enemy looked at
-            float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
+            float targetDistance = Vector2.Distance(transform.position, enemy.transform.position);
 
             if(targetDistance < maxDistance)
             {
@@ -41,13 +41,7 @@ public class Advanced_TargetLocator : MonoBehaviour
                 maxDistance = targetDistance;
             }
         }
-
         target = closestTarget;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 
     private void AimWeapon()
@@ -65,6 +59,7 @@ public class Advanced_TargetLocator : MonoBehaviour
         {
             Attack(false);
         }
+        Attack(false);
     }
 
     private void Attack(bool isActive)
@@ -75,4 +70,10 @@ public class Advanced_TargetLocator : MonoBehaviour
             emissionModule.enabled = isActive;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
 }
