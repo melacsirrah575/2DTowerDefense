@@ -143,7 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 5646390867576815107}
   range: 3
-  guns: []
+  guns:
+  - {fileID: 4532291536071251873}
 --- !u!1 &7532468822586816417
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,7 +59,6 @@ public class Advanced_TargetLocator : MonoBehaviour
         {
             Attack(false);
         }
-        Attack(false);
     }
 
     private void Attack(bool isActive)
