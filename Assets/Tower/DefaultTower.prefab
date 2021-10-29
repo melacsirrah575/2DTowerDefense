@@ -94,8 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5146932468812125949}
   - component: {fileID: 1909511701023037837}
+  - component: {fileID: 3686176858187524968}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: DefaultTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +129,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43336f805aa377f4781afad5cd9ed05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 2150477537734705543}
-  shootDistance: 2
-  targeting: 1
+  weapon: {fileID: 5646390867576815107}
+--- !u!114 &3686176858187524968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105655429832093437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d5f98057846d49b913899276463eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7532468822586816417
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +247,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3915,7 +3926,7 @@ ParticleSystem:
     radiusScale: 0.3
     collidesWith:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 4294967240
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

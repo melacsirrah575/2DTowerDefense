@@ -26,7 +26,10 @@ public class EnemyHealth : MonoBehaviour
 
     //On Collision
     //ProcessHit();
-
+    private void OnParticleCollision(GameObject other)
+    {
+        ProcessHit();
+    }
     void ProcessHit()
     {
         currentHitPoints--;
