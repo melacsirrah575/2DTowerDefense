@@ -128,7 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43336f805aa377f4781afad5cd9ed05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 5646390867576815107}
+  weapon: {fileID: 2150477537734705543}
+  shootDistance: 2
+  targeting: 1
 --- !u!1 &7532468822586816417
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +236,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3913,7 +3915,7 @@ ParticleSystem:
     radiusScale: 0.3
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 0
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

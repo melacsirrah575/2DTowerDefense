@@ -10,6 +10,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
 
     Enemy enemy;
+    int currentWaypoint = 0;
 
     void OnEnable()
     {
@@ -52,6 +53,8 @@ public class EnemyMover : MonoBehaviour
     {
         foreach(Waypoint waypoint in path)
         {
+            currentWaypoint++;
+
             Vector3 startPosition = transform.position;
             Vector3 endPosition = waypoint.transform.position;
             float travelPercent = 0f;
@@ -75,5 +78,11 @@ public class EnemyMover : MonoBehaviour
     {
         //Steal Gold and/or lose life happens here!
         gameObject.SetActive(false);
+        currentWaypoint = 0;
+    }
+
+    public int GetCurrentWaypoint()
+    {
+        return currentWaypoint;
     }
 }

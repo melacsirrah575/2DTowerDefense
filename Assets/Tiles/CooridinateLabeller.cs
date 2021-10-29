@@ -30,6 +30,8 @@ public class CooridinateLabeller : MonoBehaviour
         {
             DisplayCoordinates();
             UpdateObjectName();
+
+            label.enabled = true;
         }
 
         SetLabelColor();
