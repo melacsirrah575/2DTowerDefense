@@ -128,6 +128,7 @@ public class Advanced_Pathfinder : MonoBehaviour
         return path;
     }
 
+    //Checks to see if BreadthFirstSearch can find a path through nodes if this one were to be blocked
     public bool WillBlockPath(Vector2Int coordinates)
     {
         if (grid.ContainsKey(coordinates))
@@ -148,6 +149,7 @@ public class Advanced_Pathfinder : MonoBehaviour
         return false;
     }
 
+    //Tells Enemy to run RecalculatePath function. Sends whether or not there are any recievers
     public void NotifyReceivers()
     {
         BroadcastMessage("RecalculatePath", false ,SendMessageOptions.DontRequireReceiver);
