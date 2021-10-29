@@ -5,88 +5,74 @@ using UnityEngine;
 
 public class Advanced_TargetLocator : MonoBehaviour
 {
-    [SerializeField] GameObject weapon; //Object that Looks at Enemy
-    [SerializeField] private float shootDistance;
-    public bool targeting = true;
+    [SerializeField] Transform weapon; //Object that Looks at Enemy
+    [SerializeField] float range = 3;
+    [SerializeField] ParticleSystem[] guns;
 
-    ParticleSystem[] guns;
-
-    GameObject target;
+    Transform target;
 
     void Start()
     {
-        guns = weapon.GetComponentsInChildren<ParticleSystem>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target != null && Vector3.Distance(target.transform.position, transform.position) > shootDistance)
-        {
-            target = null;
-        }
+        FindClosestTarget();
+        AimWeapon();
+    }
 
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+    private void FindClosestTarget()
+    {
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        Transform closestTarget = null;
+        //Furthest distance an enemy will be detected. Initialized to infinity to always give a result
+        float maxDistance = Mathf.Infinity;
+
+        foreach (Enemy enemy in enemies)
         {
-            if (Vector3.Distance(enemy.transform.position, transform.position) <= shootDistance)
+            //Finds distance between tower and current enemy looked at
+            float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if(targetDistance < maxDistance)
             {
-                //if (target == null || enemy.GetComponent<Advanced_EnemyMover>().GetCurrentWaypoint() > target.GetComponent<Advanced_EnemyMover>().GetCurrentWaypoint())
-                //{
-                    target = enemy;
-                //} 
+                closestTarget = enemy.transform;
+                maxDistance = targetDistance;
             }
         }
-        Shoot();
+
+        target = closestTarget;
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, shootDistance);
-    }
-
-    private void Shoot()
-    {
-        if (target != null && Vector3.Distance(target.transform.position, transform.position) <= shootDistance)
-        {
-            if (targeting)
-            {
-                AimWeapon();
-            }
-            else
-            {
-                EnableShooting();
-            }
-        }
-        else
-        {
-            DisableShooting();
-        }
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
     private void AimWeapon()
     {
-        Vector3 dir = target.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        weapon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        EnableShooting();
-
-        //weapon.transform.right = new Vector3(weapon.transform.position.x - target.transform.position.x * 1000000, weapon.transform.position.y - target.transform.position.y * 1000000, weapon.transform.position.z);
-    }
-
-    private void EnableShooting()
-    {
-        foreach (ParticleSystem particleSystem in guns)
+        float targetDistance = Vector3.Distance(transform.position, target.position);
+        if(targetDistance < range)
         {
-            particleSystem.enableEmission = true;
+            //LookAt function for 2D
+            Vector3 dir = target.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            weapon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            Attack(true);
+        } else
+        {
+            Attack(false);
         }
     }
 
-    private void DisableShooting()
+    private void Attack(bool isActive)
     {
         foreach (ParticleSystem particleSystem in guns)
         {
-            particleSystem.enableEmission = false;
+            var emissionModule = particleSystem.emission;
+            emissionModule.enabled = isActive;
         }
     }
 }

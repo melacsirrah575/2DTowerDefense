@@ -141,9 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43336f805aa377f4781afad5cd9ed05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 2150477537734705543}
+  weapon: {fileID: 5646390867576815107}
   shootDistance: 3
-  targeting: 1
 --- !u!1 &7532468822586816417
 GameObject:
   m_ObjectHideFlags: 0
