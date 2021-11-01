@@ -43,7 +43,6 @@ public class Advanced_Tile : MonoBehaviour
                 gridManager.BlockNode(coordinates);
                 pathfinder.NotifyReceivers();
             }
-
         }
     }
 }
