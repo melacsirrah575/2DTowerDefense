@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d3905526ce43445901c31b5cf2d655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 7970513889017621172, guid: 17b8381a2c42f0b458019d62449090f9, type: 3}
   isPlaceable: 0
 --- !u!114 &655897361749166053
 MonoBehaviour:
@@ -115,7 +115,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1539148647865080677, guid: 9955e1826be664447bb5ec1dc356805b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9955e1826be664447bb5ec1dc356805b, type: 3}
 --- !u!1 &5124793762270203210 stripped
 GameObject:
