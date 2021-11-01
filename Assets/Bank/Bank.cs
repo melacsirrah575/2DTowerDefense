@@ -22,6 +22,13 @@ public class Bank : MonoBehaviour
 
     public void Withdraw(int amount)
     {
-        currentBalance -= Mathf.Abs(amount);
+        if(currentBalance <= 0)
+        {
+            currentBalance = 0;
+            return;
+        }else
+        {
+            currentBalance -= Mathf.Abs(amount);
+        }
     }
 }
