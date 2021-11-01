@@ -94,8 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5146932468812125949}
   - component: {fileID: 3260395150309194936}
+  - component: {fileID: 7970513889017621172}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: NormalTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +132,19 @@ MonoBehaviour:
   weapon: {fileID: 2150477537734705543}
   shootDistance: 3
   targeting: 1
+--- !u!114 &7970513889017621172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105655429832093437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d5f98057846d49b913899276463eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 75
 --- !u!1 &7532468822586816417
 GameObject:
   m_ObjectHideFlags: 0

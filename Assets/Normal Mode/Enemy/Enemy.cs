@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //This script will be used to help create the Bank for the player
-    //It will have the function that rewards gold on enemy death
-    //Maybe a function for enemy to steal gold if reaches end?
-    //Will hold function to reduce Player's lives if using lives
+    [SerializeField] int goldReward = 25;
+
+    Bank bank;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bank = FindObjectOfType<Bank>();
     }
 
     public void RewardGold()
     {
-        //Add safeguard in case bank == null
-        //Deposit Gold   
+        if (bank == null) { return; }
+        bank.Deposit(goldReward);
     }
 }
