@@ -10,7 +10,6 @@ public class TargetLocator : MonoBehaviour
     public bool targeting = true;
 
     ParticleSystem[] guns;
-
     GameObject target;
 
     void Start()

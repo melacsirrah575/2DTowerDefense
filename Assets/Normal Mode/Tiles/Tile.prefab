@@ -342,4 +342,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 7970513889017621172, guid: 17b8381a2c42f0b458019d62449090f9, type: 3}
-  isPlaceable: 0
+  isPlaceable: 1
