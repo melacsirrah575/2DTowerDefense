@@ -15,11 +15,18 @@ public class GameManager : MonoBehaviour
     //public bool to track if game is in a paused state or not
     public bool m_isPaused = false;
 
+    MenuManager menuManager;
+
     private void Awake()
     {
         //On Awake, create the instance of the GameManager that will be uised for the duration of the program
         SetInstance();
         MainMenu();
+    }
+
+    private void Start()
+    {
+        menuManager = GetComponent<MenuManager>();
     }
 
     private void SetInstance()
@@ -67,8 +74,20 @@ public class GameManager : MonoBehaviour
             m_isPaused = false;
 
             //Turn off the PauseMenu and MainMenu gameobject
-            m_pauseMenu.SetActive(false);
-            m_mainMenu.SetActive(false);
+            if(menuManager.m_mainMenuIsActive)
+            {
+                m_pauseMenu.SetActive(false);
+                m_mainMenu.SetActive(true);
+                menuManager.m_settingsMenuIsActive = false;
+                menuManager.m_settingsMenu.SetActive(false);
+                m_isPaused = true;
+            } else
+            {
+                m_pauseMenu.SetActive(false);
+                m_mainMenu.SetActive(false);
+                menuManager.m_settingsMenuIsActive = false;
+                menuManager.m_settingsMenu.SetActive(false);
+            }
         }
     }
 
