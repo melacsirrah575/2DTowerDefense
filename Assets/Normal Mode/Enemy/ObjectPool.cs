@@ -75,9 +75,10 @@ public class ObjectPool : MonoBehaviour
         while(true)
         {
             EnableObjectInPool();
-
-            EnableBossObjectInPool();
-
+            if(enemyMover.WaveNumber == 10)
+            {
+                EnableBossObjectInPool();
+            }
             yield return new WaitForSeconds(spawnTimer);
         }
     }
