@@ -13,7 +13,7 @@ public class Advanced_EnemyHealth : MonoBehaviour
     public int CurrentHitPoints { get { return currentHitPoints; } }
 
     Advanced_Enemy enemy;
-    AudioSource audioSource;
+    public AudioClip audioClip;
 
     void OnEnable()
     {
@@ -23,7 +23,6 @@ public class Advanced_EnemyHealth : MonoBehaviour
     private void Start()
     {
         enemy = GetComponent<Advanced_Enemy>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     //On Collision
@@ -38,6 +37,7 @@ public class Advanced_EnemyHealth : MonoBehaviour
 
         if(currentHitPoints <= 0)
         {
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             gameObject.SetActive(false);
             maxHitPoints += difficultyRamp;
             enemy.RewardGold();

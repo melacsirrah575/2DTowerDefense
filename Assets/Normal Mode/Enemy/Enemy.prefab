@@ -175,3 +175,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultyRamp: 1
   maxHitPoints: 5
+  audioClip: {fileID: 8300000, guid: 430ab5da44c25f8428effa895fcd3524, type: 3}

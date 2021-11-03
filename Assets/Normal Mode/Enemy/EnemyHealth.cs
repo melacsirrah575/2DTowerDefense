@@ -10,7 +10,8 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] int maxHitPoints = 5;
     int currentHitPoints = 1;
-    public int CurrentHitPoints { get { return currentHitPoints; } }
+
+    public AudioClip audioClip;
 
     Enemy enemy;
 
@@ -36,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
 
         if(currentHitPoints <= 0)
         {
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             gameObject.SetActive(false);
             maxHitPoints += difficultyRamp;
             enemy.RewardGold();

@@ -700,6 +700,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8504955038563436371, guid: 33933d1353b3a534dabc7b2fd60e5049, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33933d1353b3a534dabc7b2fd60e5049, type: 3}
