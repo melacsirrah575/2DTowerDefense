@@ -9,11 +9,12 @@ public class Advanced_EnemyHealth : MonoBehaviour
     [SerializeField] int difficultyRamp = 1;
 
     [SerializeField] int maxHitPoints = 5;
-    int currentHitPoints = 0;
+    int currentHitPoints = 1;
+    public int CurrentHitPoints { get { return currentHitPoints; } }
 
     Advanced_Enemy enemy;
+    public AudioClip audioClip;
 
-    // Start is called before the first frame update
     void OnEnable()
     {
         currentHitPoints = maxHitPoints;
@@ -36,6 +37,7 @@ public class Advanced_EnemyHealth : MonoBehaviour
 
         if(currentHitPoints <= 0)
         {
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             gameObject.SetActive(false);
             maxHitPoints += difficultyRamp;
             enemy.RewardGold();

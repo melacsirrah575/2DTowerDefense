@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408287207acd6b6429f9b86db1484c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audioMixer: {fileID: 0}
+  m_audioMixer: {fileID: 24100000, guid: 73adc7544f1c6f24cbd262bb9cae8a07, type: 2}
   m_resolutionsDropdown: {fileID: 0}
   m_qualityDropdown: {fileID: 0}
   m_fullscreenToggle: {fileID: 0}
