@@ -8,18 +8,27 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] [Range(0, 50)] int poolSize = 5;
     [SerializeField] [Range(0.1f, 30f)]float spawnTimer = 1f;
 
+    [SerializeField] GameObject bossPrefab;
+    [SerializeField] [Range(0, 50)] int bossPoolSize = 1;
+    [SerializeField] [Range(0.1f, 30f)] float bossSpawnTimer = 1f;
+
+    [SerializeField] EnemyMover enemyMover;
+
     GameObject[] pool;
+    GameObject[] bossPool;
+
 
     private void Awake()
     {
-        PopulatePool();
+        PopulatePools();
     }
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnBoss());
     }
 
-    private void PopulatePool()
+    private void PopulatePools()
     {
         pool = new GameObject[poolSize];
 
@@ -27,6 +36,14 @@ public class ObjectPool : MonoBehaviour
         {
             pool[i] = Instantiate(enemyPrefab, transform);
             pool[i].SetActive(false);
+        }
+
+        bossPool = new GameObject[bossPoolSize];
+
+        for (int i = 0; i < bossPool.Length; i++)
+        {
+            bossPool[i] = Instantiate(bossPrefab, transform);
+            bossPool[i].SetActive(false);
         }
     }
 
@@ -42,6 +59,18 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    void EnableBossObjectInPool()
+    {
+        for (int i = 0; i < bossPool.Length; i++)
+        {
+            if (bossPool[i].activeInHierarchy == false)
+            {
+                bossPool[i].SetActive(true);
+                return;
+            }
+        }
+    }
+
     IEnumerator SpawnEnemy()
     {
         //Currently Infinite but doesn't break game due to how CoRoutines work
@@ -50,5 +79,18 @@ public class ObjectPool : MonoBehaviour
             EnableObjectInPool();
             yield return new WaitForSeconds(spawnTimer);
         }
+    }
+
+    IEnumerator SpawnBoss()
+    {
+        if (enemyMover.WaveNumber == 10)
+        {
+            EnableBossObjectInPool();
+        }
+        else
+        {
+            yield return new WaitForSeconds(bossSpawnTimer);
+        }
+        yield return new WaitForSeconds(bossSpawnTimer);
     }
 }
