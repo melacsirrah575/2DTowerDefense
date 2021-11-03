@@ -59,7 +59,7 @@ public class ObjectPool : MonoBehaviour
 
     void EnableBossObjectInPool()
     {
-        for (int i = 0; i < bossPool.Length; i++)
+        for(int i = 0; i < bossPool.Length; i++)
         {
             if (bossPool[i].activeInHierarchy == false)
             {
@@ -76,10 +76,7 @@ public class ObjectPool : MonoBehaviour
         {
             EnableObjectInPool();
 
-            if (enemyMover.WaveNumber == 10)
-            {
-                EnableBossObjectInPool();
-            }
+            EnableBossObjectInPool();
 
             yield return new WaitForSeconds(spawnTimer);
         }
