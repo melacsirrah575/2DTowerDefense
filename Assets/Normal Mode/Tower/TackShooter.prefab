@@ -4907,6 +4907,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5146932468812125949}
   - component: {fileID: 2019923960910763839}
+  - component: {fileID: -3291016764510224804}
+  - component: {fileID: 6260350256559314216}
   m_Layer: 0
   m_Name: TackShooter
   m_TagString: Untagged
@@ -4944,6 +4946,35 @@ MonoBehaviour:
   weapon: {fileID: 2150477537734705543}
   shootDistance: 1.5
   targeting: 0
+--- !u!114 &-3291016764510224804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105655429832093437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d5f98057846d49b913899276463eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 75
+--- !u!58 &6260350256559314216
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105655429832093437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &5484641878242264358
 GameObject:
   m_ObjectHideFlags: 0

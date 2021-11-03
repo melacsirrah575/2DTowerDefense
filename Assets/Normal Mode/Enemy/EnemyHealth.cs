@@ -9,7 +9,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int difficultyRamp = 1;
 
     [SerializeField] int maxHitPoints = 5;
-    int currentHitPoints = 0;
+    int currentHitPoints = 1;
+    public int CurrentHitPoints { get { return currentHitPoints; } }
 
     Enemy enemy;
 
