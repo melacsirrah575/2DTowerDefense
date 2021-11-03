@@ -10,7 +10,6 @@ public class ObjectPool : MonoBehaviour
 
     [SerializeField] GameObject bossPrefab;
     [SerializeField] [Range(0, 50)] int bossPoolSize = 1;
-    [SerializeField] [Range(0.1f, 30f)] float bossSpawnTimer = 1f;
 
     [SerializeField] EnemyMover enemyMover;
 
@@ -25,7 +24,6 @@ public class ObjectPool : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
-        StartCoroutine(SpawnBoss());
     }
 
     private void PopulatePools()
@@ -77,20 +75,13 @@ public class ObjectPool : MonoBehaviour
         while(true)
         {
             EnableObjectInPool();
+
+            if (enemyMover.WaveNumber == 10)
+            {
+                EnableBossObjectInPool();
+            }
+
             yield return new WaitForSeconds(spawnTimer);
         }
-    }
-
-    IEnumerator SpawnBoss()
-    {
-        if (enemyMover.WaveNumber == 10)
-        {
-            EnableBossObjectInPool();
-        }
-        else
-        {
-            yield return new WaitForSeconds(bossSpawnTimer);
-        }
-        yield return new WaitForSeconds(bossSpawnTimer);
     }
 }
