@@ -46,3 +46,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5058569505803470919, guid: 5974152d8ae33904a888354b39fb06d4, type: 3}
   poolSize: 5
   spawnTimer: 1
+  bossPrefab: {fileID: 1990248133647207155, guid: a3e1488a2d4e77440ab1aa333ecf38cb, type: 3}
+  bossPoolSize: 1
+  bossWave: 40

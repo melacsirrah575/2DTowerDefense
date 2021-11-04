@@ -10,6 +10,7 @@ public class ObjectPool : MonoBehaviour
 
     [SerializeField] GameObject bossPrefab;
     [SerializeField] [Range(0, 50)] int bossPoolSize = 1;
+    [SerializeField] [Range(1, 100)] int bossWave = 10;
 
     [SerializeField] EnemyMover enemyMover;
 
@@ -59,7 +60,7 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
-        if (waveNumber >= 10 * pool.Length)
+        if (waveNumber >= bossWave)
         {
             waveNumber = 0;
             waveNumber++;
@@ -89,7 +90,7 @@ public class ObjectPool : MonoBehaviour
         while(true)
         {
             EnableObjectInPool();
-            if(waveNumber == 10 * pool.Length)
+            if(waveNumber == bossWave)
             {
                 EnableBossObjectInPool();
             }
