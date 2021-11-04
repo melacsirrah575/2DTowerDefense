@@ -9,7 +9,6 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
 
-    Enemy enemy;
     int currentWaypoint = 0;
 
     void OnEnable()
@@ -17,11 +16,6 @@ public class EnemyMover : MonoBehaviour
         FindPath();
         ReturnToStart();
         StartCoroutine(FollowPath());
-    }
-
-    private void Start()
-    {
-        enemy = GetComponent<Enemy>();
     }
 
     void FindPath()
@@ -51,7 +45,7 @@ public class EnemyMover : MonoBehaviour
 
     IEnumerator FollowPath() //Goes through the path on 1 second delay for each waypoint
     {
-        foreach(Waypoint waypoint in path)
+        foreach (Waypoint waypoint in path)
         {
             currentWaypoint++;
 

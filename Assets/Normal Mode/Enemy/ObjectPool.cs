@@ -8,18 +8,29 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] [Range(0, 50)] int poolSize = 5;
     [SerializeField] [Range(0.1f, 30f)]float spawnTimer = 1f;
 
+    [SerializeField] GameObject bossPrefab;
+    [SerializeField] [Range(0, 50)] int bossPoolSize = 1;
+    [SerializeField] [Range(1, 100)] int bossWave = 10;
+
+    [SerializeField] EnemyMover enemyMover;
+
+    int waveNumber = 0;
+
+
     GameObject[] pool;
+    GameObject[] bossPool;
+
 
     private void Awake()
     {
-        PopulatePool();
+        PopulatePools();
     }
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
     }
 
-    private void PopulatePool()
+    private void PopulatePools()
     {
         pool = new GameObject[poolSize];
 
@@ -27,6 +38,14 @@ public class ObjectPool : MonoBehaviour
         {
             pool[i] = Instantiate(enemyPrefab, transform);
             pool[i].SetActive(false);
+        }
+
+        bossPool = new GameObject[bossPoolSize];
+
+        for (int i = 0; i < bossPool.Length; i++)
+        {
+            bossPool[i] = Instantiate(bossPrefab, transform);
+            bossPool[i].SetActive(false);
         }
     }
 
@@ -40,6 +59,29 @@ public class ObjectPool : MonoBehaviour
                 return;
             }
         }
+
+        if (waveNumber >= bossWave)
+        {
+            waveNumber = 0;
+            waveNumber++;
+        }
+        else
+        {
+            waveNumber++;
+        }
+        Debug.Log(waveNumber);
+    }
+
+    void EnableBossObjectInPool()
+    {
+        for(int i = 0; i < bossPool.Length; i++)
+        {
+            if (bossPool[i].activeInHierarchy == false)
+            {
+                bossPool[i].SetActive(true);
+                return;
+            }
+        }
     }
 
     IEnumerator SpawnEnemy()
@@ -48,6 +90,10 @@ public class ObjectPool : MonoBehaviour
         while(true)
         {
             EnableObjectInPool();
+            if(waveNumber == bossWave)
+            {
+                EnableBossObjectInPool();
+            }
             yield return new WaitForSeconds(spawnTimer);
         }
     }
