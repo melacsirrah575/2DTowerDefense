@@ -9,9 +9,6 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
 
-    int waveNumber = 0;
-    public int WaveNumber { get { return waveNumber; } }
-
     int currentWaypoint = 0;
 
     void OnEnable()
@@ -48,17 +45,6 @@ public class EnemyMover : MonoBehaviour
 
     IEnumerator FollowPath() //Goes through the path on 1 second delay for each waypoint
     {
-        if (waveNumber >= 10)
-        {
-            waveNumber = 0;
-            waveNumber++;
-        }
-        else
-        {
-            waveNumber++;
-        }
-        Debug.Log(waveNumber);
-
         foreach (Waypoint waypoint in path)
         {
             currentWaypoint++;
