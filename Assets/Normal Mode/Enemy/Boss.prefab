@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   speed: 1
-  lifeManager: {fileID: 8272846746556830947, guid: abf2aec3c16dcad4d936449a61e37969, type: 3}
+  lifeManager: {fileID: -8583580885886940384, guid: a1c4117b24d8db54b9cad285e2a6e769, type: 3}
 --- !u!58 &5769965444430861466
 CircleCollider2D:
   m_ObjectHideFlags: 0

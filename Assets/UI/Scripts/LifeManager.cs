@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class LifeManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI displayHealth;
     [SerializeField] int maxHealth = 10;
     public int currentHealth;
     public int CurrentHealth { get { return currentHealth; } }
@@ -11,11 +14,18 @@ public class LifeManager : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
+        UpdateDisplay();
+    }
+
+    public void UpdateDisplay()
+    {
+        displayHealth.text = "Lives: " + currentHealth;
     }
 
     public void LoseHealth()
     {
         currentHealth--;
+        UpdateDisplay();
 
         if (currentHealth <= 0)
         {

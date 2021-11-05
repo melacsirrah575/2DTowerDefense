@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3941534844381633767}
   - component: {fileID: 3941534844381633768}
   - component: {fileID: 124292038}
-  - component: {fileID: 8272846746556830947}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -83,17 +82,3 @@ MonoBehaviour:
   m_pauseMenu: {fileID: 0}
   m_mainMenu: {fileID: 0}
   m_isPaused: 0
---- !u!114 &8272846746556830947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941534844381633764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89beb5c7b85a49947995730dda5a06e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
