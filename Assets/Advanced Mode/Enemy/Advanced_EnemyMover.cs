@@ -7,6 +7,7 @@ using UnityEngine;
 public class Advanced_EnemyMover : MonoBehaviour
 {
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
+    [SerializeField] LifeManager lifeManager;
 
     List<Advanced_Node> path = new List<Advanced_Node>();
 
@@ -25,6 +26,8 @@ public class Advanced_EnemyMover : MonoBehaviour
     {
         pathfinder = FindObjectOfType<Advanced_Pathfinder>();
         gridManager = FindObjectOfType<Advanced_GridManager>();
+        lifeManager = FindObjectOfType<LifeManager>();
+
         enemy = GetComponent<Advanced_Enemy>();
     }
 
@@ -79,6 +82,7 @@ public class Advanced_EnemyMover : MonoBehaviour
     private void FinishPath()
     {
         //Steal Gold and/or lose life happens here!
+        lifeManager.LoseHealth();
         gameObject.SetActive(false);
     }
 }

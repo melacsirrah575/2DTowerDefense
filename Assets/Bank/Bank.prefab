@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182362896802951760}
   - component: {fileID: 143714105688989774}
+  - component: {fileID: -8583580885886940384}
   m_Layer: 0
   m_Name: Bank
   m_TagString: Untagged
@@ -44,3 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBalance: 150
+  displayBalance: {fileID: 0}
+--- !u!114 &-8583580885886940384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090253072956180606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89beb5c7b85a49947995730dda5a06e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayHealth: {fileID: 0}
+  maxHealth: 10
+  currentHealth: 0

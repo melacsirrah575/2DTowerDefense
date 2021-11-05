@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   speed: 2
+  lifeManager: {fileID: -8583580885886940384, guid: a1c4117b24d8db54b9cad285e2a6e769, type: 3}
 --- !u!114 &-641122581377558871
 MonoBehaviour:
   m_ObjectHideFlags: 0

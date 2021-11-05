@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: m_settingsMenu
       value: 
       objectReference: {fileID: 1316094393}
+    - target: {fileID: 8272846746556830947, guid: abf2aec3c16dcad4d936449a61e37969, type: 3}
+      propertyPath: currentHealth
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf2aec3c16dcad4d936449a61e37969, type: 3}
 --- !u!1 &1666408496 stripped
