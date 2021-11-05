@@ -8,8 +8,14 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
+    [SerializeField] LifeManager lifeManager;
 
     int currentWaypoint = 0;
+
+    private void Start()
+    {
+        lifeManager = FindObjectOfType<LifeManager>();
+    }
 
     void OnEnable()
     {
@@ -71,6 +77,7 @@ public class EnemyMover : MonoBehaviour
     private void FinishPath()
     {
         //Steal Gold and/or lose life happens here!
+        lifeManager.LoseHealth();
         gameObject.SetActive(false);
         currentWaypoint = 0;
     }

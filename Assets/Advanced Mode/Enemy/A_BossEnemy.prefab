@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  lifeManager: {fileID: 8272846746556830947, guid: abf2aec3c16dcad4d936449a61e37969, type: 3}
 --- !u!61 &5643613346196126798
 BoxCollider2D:
   m_ObjectHideFlags: 0
