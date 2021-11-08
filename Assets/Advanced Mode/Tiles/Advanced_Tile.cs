@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Advanced_Tile : MonoBehaviour
 {
@@ -35,14 +36,22 @@ public class Advanced_Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            bool isSuccussful = towerPrefab.CreateTower(towerPrefab, transform.position);
-            if (isSuccussful)
+            if (gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
             {
-                gridManager.BlockNode(coordinates);
-                pathfinder.NotifyReceivers();
+                bool isSuccussful = towerPrefab.CreateTower(towerPrefab, transform.position);
+                if (isSuccussful)
+                {
+                    gridManager.BlockNode(coordinates);
+                    pathfinder.NotifyReceivers();
+                }
             }
         }
+    }
+
+    public void SetSelectedTower(Tower tower)
+    {
+        towerPrefab = tower;
     }
 }

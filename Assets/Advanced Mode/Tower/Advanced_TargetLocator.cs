@@ -7,6 +7,7 @@ public class Advanced_TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon; //Object that Looks at Enemy
     [SerializeField] float range = 3;
+    public bool targeting = true;
     [SerializeField] ParticleSystem[] guns;
 
     Transform target;
@@ -20,7 +21,11 @@ public class Advanced_TargetLocator : MonoBehaviour
     void Update()
     {
         FindClosestTarget();
-        AimWeapon();
+
+        if (targeting)
+        {
+            AimWeapon();
+        }
     }
 
     private void FindClosestTarget()
